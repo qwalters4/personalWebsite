@@ -1,0 +1,16 @@
+<div>
+  <table class='table' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Release</th>
+        <th>Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let change of changelogs">
+        <td>{{ change.release }}</td>
+        <td>{{ change.logs }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
