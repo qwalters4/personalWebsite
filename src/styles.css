@@ -60,7 +60,7 @@ header {
 .docs-header-background:before {
   content: "";
   position: absolute;
-  background-image: url(C:\Users\E5671663\OneDrive-FIS\Documents\rads-app\src\assets\angular-white-transparent.d4d5ed2946afa9f1.svg);
+  background-image: url("C:\Users\E5671663\OneDrive - FIS\Documents\rads-app\src\assets\angular-white-transparent.d4d5ed2946afa9f1.svg");
   background-size: 200px;
   top: 0;
   bottom: 0;
@@ -116,6 +116,11 @@ h1 {
   overflow: visible;
   transform: translate3d(0, 0, 0);
   transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.changelogContainer
+{
+  margin-top: 20px;
 }
 
 html, body {
