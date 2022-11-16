@@ -132,3 +132,63 @@ body {
   margin: 0;
   background-color: #35343d;
 }
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 250px;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+}
+
+.example-element-serviceName {
+  line-height: normal;
+}
+
+.example-element-details {
+  padding: 8px;
+  margin: 8px 0;
+  width: 100%;
+  height: 100%;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-full-height {
+  height: 100%;
+}
