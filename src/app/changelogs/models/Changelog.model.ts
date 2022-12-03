@@ -4,7 +4,7 @@ import { ChangeLineItem, ChangeLineItemAdapter } from "./ChangeLineItem.model";
 
 export class Changelog
 {
-  constructor(public id: Number, public release: string, public changeLineItems: ChangeLineItem[], public team: string)
+  constructor(public id: number, public release: string, public changeLineItems: ChangeLineItem[], public team: string, public update: boolean)
   {}
 }
 
@@ -25,7 +25,8 @@ export class ChangelogAdapter implements Adapter<Changelog>
             item.id,
             item.release,
             temparray,
-            item.team
+            item.team,
+            false
         );
     }
 }

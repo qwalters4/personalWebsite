@@ -1,4 +1,10 @@
 <div class="container changelogContainer">
+  <mat-card class="save-required-card" *ngIf="saveNeeded">
+    <mat-card-content>
+      Changes have been made. Click 'Apply' to save changes.
+      <button mat-raised-button color="primary" (click)="saveChanges($event)">Accent</button>
+    </mat-card-content>
+  </mat-card>
   <mat-accordion>
     <mat-expansion-panel *ngFor="let c of (changelogs); trackBy: trackItem">
       <mat-expansion-panel-header>
@@ -35,26 +41,26 @@
                 <div class="example-element-position">
                   <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Change type</mat-label>
-                    <input matInput placeholder="Change type..." [(ngModel)]="element.type">
+                    <input matInput placeholder="Change type..." [(ngModel)]="element.type" (keydown)="onKey($event, c)">
                   </mat-form-field>
                 </div>
                 <div class="example-element-serviceName">
                   <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Service name</mat-label>
-                    <input matInput placeholder="Service name..." [(ngModel)]="element.serviceName">
+                    <input matInput placeholder="Service name..." [(ngModel)]="element.serviceName" (keydown)="onKey($event, c)">
                   </mat-form-field>
                 </div>
                 <div>
                   <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Description</mat-label>
-                    <textarea matInput placeholder="Description of the change...">{{element.description}}</textarea>
+                    <textarea matInput placeholder="Description of the change..." (keydown)="onKey($event, c)">{{element.description}}</textarea>
                   </mat-form-field>
                 </div>
               </div>
               <div class="example-element-details">
                 <mat-form-field class="example-full-width example-full-height" appearance="fill">
                   <mat-label>Details</mat-label>
-                  <textarea cdkTextareaAutosize cdkAutosizeMaxRows="10" matInput placeholder="Details of the change...">{{element.details}}</textarea>
+                  <textarea cdkTextareaAutosize cdkAutosizeMaxRows="10" matInput placeholder="Details of the change..." (keydown)="onKey($event, c)">{{element.details}}</textarea>
                 </mat-form-field>
               </div>
             </div>

@@ -137,6 +137,12 @@ table {
   width: 100%;
 }
 
+.save-required-card
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 tr.example-detail-row {
   height: 0;
 }

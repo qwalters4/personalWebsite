@@ -29,4 +29,9 @@ export class AppService {
   {
     return this.http.delete(this.rootURL + "Changelog/" + String(id));
   }
+
+  updateChangelog(id: any, changelog: any)
+  {
+    return this.http.put(this.rootURL + "Changelog/" + String(id), {changelog})
+  }
 }

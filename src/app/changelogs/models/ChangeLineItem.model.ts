@@ -3,7 +3,7 @@ import { Adapter } from "./adapter";
 
 export class ChangeLineItem
 {
-  constructor(public id: Number, public type: string, public serviceName: string, public description: string, public details: string)
+  constructor(public id: number, public type: string, public serviceName: string, public description: string, public details: string)
   {}
 }
 

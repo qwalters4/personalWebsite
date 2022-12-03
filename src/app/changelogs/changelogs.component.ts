@@ -25,6 +25,7 @@ export class ChangelogsComponent
   panelOpenState = false;
 
   popUpMsg: string = "";
+  saveNeeded: boolean = false;
   changelogs: Changelog[] = [];
   changelogsUI: Changelog[] = [];
   stringoutput: string = "";
@@ -38,7 +39,8 @@ export class ChangelogsComponent
   {
     this.api.getChangelogs().subscribe((data: any) => {this.changelogs = data});
   }
-  deleteChangelog(id: Number)
+
+  deleteChangelog(id: number)
   {
     this.api.deleteChangelog(id).subscribe((data: any) => {this.popUpMsg = data});
     
@@ -51,8 +53,30 @@ export class ChangelogsComponent
     }
   }
 
+  updateChangelog(id: number, changelog: Changelog)
+  {
+    this.api.updateChangelog(id, changelog).subscribe((data: any) => {this.popUpMsg = data});
+  }
+
+  saveChanges(event: any)
+  {
+    let temparray: Changelog[] = this.changelogs.filter(x => x.update == true);
+
+    temparray.forEach(element =>
+      {
+        this.updateChangelog(element.id, element);
+      });
+  }
+
   //Function to trigger changes in array
-  public trackItem (index: number, item: Changelog) {
+  public trackItem (index: number, item: Changelog)
+  {
     return item.id;
+  }
+
+  onKey(event: any, c: Changelog)
+  {
+    c.update = true;
+    this.saveNeeded = true;
   }
 }

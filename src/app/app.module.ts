@@ -20,6 +20,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -51,7 +53,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatListModule,
     MatGridListModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   bootstrap: [AppComponent]
 })
