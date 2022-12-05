@@ -32,7 +32,7 @@ td {
 .docs-header-background {
   overflow: hidden;
   position: relative;
-  height: 420px;
+  height: 400px;
 }
 
 .docs-header-background {
@@ -60,7 +60,7 @@ header {
 .docs-header-background:before {
   content: "";
   position: absolute;
-  background-image: url("C:\Users\E5671663\OneDrive - FIS\Documents\rads-app\src\assets\angular-white-transparent.d4d5ed2946afa9f1.svg");
+  background-image: url("C:\Users\qwalt\OneDrive\Desktop\PersonalWebsite\personalWebsite\src\assets\angular-white-transparent.d4d5ed2946afa9f1.svg");
   background-size: 200px;
   top: 0;
   bottom: 0;
@@ -197,4 +197,17 @@ tr.example-element-row:not(.example-expanded-row):active {
 }
 .example-full-height {
   height: 100%;
+}
+
+.sectionHeaders
+{
+  font-size: xx-large;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.child-object
+{
+  margin-left: 40px;
+  margin-top: 10px;
 }
