@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Changelog, ChangelogAdapter } from './changelogs/models/Changelog.model';
+import { Project, ProjectAdapter } from './projects/models/project.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,27 +11,45 @@ export class AppService {
 
   constructor(
     private http: HttpClient,
-    private adapter: ChangelogAdapter) { }
+    private adapter: ProjectAdapter) { }
 
   rootURL = "https://localhost:7040/api/";
 
-  getChangelogs(): Observable<Changelog[]>
+  getProjects(): Observable<Project[]>
   {
-    return this.http.get<Changelog[]>(this.rootURL + "Changelog").pipe(
+    return this.http.get<Project[]>(this.rootURL + "Project").pipe(
       map(
         (data: any[]) => data.map(item => this.adapter.adapt(item))));
   }
-  addChangelog(changelog: any)
+  getSoftwareProjects(): Observable<Project[]>
   {
-    return this.http.post(this.rootURL + "Changelog/", {changelog});
+    return this.http.get<Project[]>(this.rootURL + "Project/byCategory/software").pipe(
+      map(
+        (data: any[]) => data.map(item => this.adapter.adapt(item))));
   }
-  deleteChangelog(id: any): Observable<Object>
+  getHardwareProjects(): Observable<Project[]>
   {
-    return this.http.delete(this.rootURL + "Changelog/" + String(id));
+    return this.http.get<Project[]>(this.rootURL + "Project/byCategory/hardware").pipe(
+      map(
+        (data: any[]) => data.map(item => this.adapter.adapt(item))));
+  }
+  getAutomotiveProjects(): Observable<Project[]>
+  {
+    return this.http.get<Project[]>(this.rootURL + "Project/byCategory/automotive").pipe(
+      map(
+        (data: any[]) => data.map(item => this.adapter.adapt(item))));
+  }
+  addProject(project: any)
+  {
+    return this.http.post(this.rootURL + "Project/", {project});
+  }
+  deleteProject(id: any): Observable<Object>
+  {
+    return this.http.delete(this.rootURL + "Project/" + String(id));
   }
 
-  updateChangelog(id: any, changelog: any)
+  updateProject(id: any, project: any)
   {
-    return this.http.put(this.rootURL + "Changelog/" + String(id), {changelog})
+    return this.http.put(this.rootURL + "Project/" + String(id), {project})
   }
 }
