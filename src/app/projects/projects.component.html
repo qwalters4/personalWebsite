@@ -30,7 +30,7 @@
                     </mat-panel-description>
                     <img *ngIf="!p.openState" mat-card-image src="{{p.imgSrcs[0].src}}" style="margin-left: 10px; max-width: 50%;" alt="test">
                 </mat-expansion-panel-header>
-                <p>{{p.content}}</p>
+                <div [innerHTML]="p.content"></div>
             </mat-expansion-panel>
         </mat-accordion>
     </mat-card>

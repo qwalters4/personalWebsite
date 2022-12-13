@@ -3,7 +3,7 @@ import { Adapter } from "./adapter";
 import { ImgSrc, ImgSrcAdapter } from "./ImgSrc.model";
 
 export class Project{
-    constructor(public id: number, public title: string, public description: string, public imgSrcs: ImgSrc[], public content: string, public category: string, public openState: boolean)
+    constructor(public id: number, public title: string, public description: string, public imgSrcs: ImgSrc[], public content: any, public category: string, public openState: boolean)
     {}
 }
 
@@ -19,6 +19,17 @@ export class ProjectAdapter implements Adapter<Project>
         {
             temparray.push(this.adapter.adapt(img));
         }
+
+        // // Create the string that contains the HTML for the div element
+        // let htmlString = item.content;
+
+        // // Use the createElement() method to create the div element
+        // let divElement = document.createElement('div');
+
+        // // Set the innerHTML property of the element to the HTML string
+        // divElement.innerHTML = htmlString;
+
+
         return new Project
         (
             item.id,
