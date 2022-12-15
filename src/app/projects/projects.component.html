@@ -10,7 +10,7 @@
                     <mat-panel-description>
                         {{p.description}}
                     </mat-panel-description>
-                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgSrcs[0].src}}" style="margin-left: 10px; max-width: 50%;">
+                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgHeader}}" style="margin-left: 10px; max-width: 50%;">
                 </mat-expansion-panel-header>
                 <p>{{p.content}}</p>
             </mat-expansion-panel>
@@ -28,7 +28,7 @@
                     <mat-panel-description>
                         {{p.description}}
                     </mat-panel-description>
-                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgSrcs[0].src}}" style="margin-left: 10px; max-width: 50%;" alt="test">
+                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgHeader}}" style="margin-left: 10px; max-width: 50%;" alt="test">
                 </mat-expansion-panel-header>
                 <div [innerHTML]="p.content"></div>
             </mat-expansion-panel>
@@ -46,7 +46,7 @@
                     <mat-panel-description>
                         {{p.description}}
                     </mat-panel-description>
-                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgSrcs[0].src}}" style="margin-left: 10px; max-width: 50%;">
+                    <img *ngIf="!p.openState" mat-card-image src="{{p.imgHeader}}" style="margin-left: 10px; max-width: 50%;">
                 </mat-expansion-panel-header>
                 <p>{{p.content}}</p>
             </mat-expansion-panel>

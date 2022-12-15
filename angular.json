@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rads-app": {
+    "PersonalWebsite": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rads-app",
+            "outputPath": "dist/PersonalWebsite",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rads-app:build:production"
+              "browserTarget": "PersonalWebsite:build:production"
             },
             "development": {
-              "browserTarget": "rads-app:build:development"
+              "browserTarget": "PersonalWebsite:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rads-app:build"
+            "browserTarget": "PersonalWebsite:build"
           }
         },
         "test": {
