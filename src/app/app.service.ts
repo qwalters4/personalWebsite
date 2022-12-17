@@ -13,7 +13,7 @@ export class AppService {
     private http: HttpClient,
     private adapter: ProjectAdapter) { }
 
-  rootURL = "https://localhost:7040/api/";
+  rootURL = "http://192.168.1.169:9040/api/";
 
   getProjects(): Observable<Project[]>
   {
