@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Project, ProjectAdapter } from './projects/models/project.model';
+import { Project, ProjectAdapter } from './projects/models/Project.model';
 
 @Injectable({
   providedIn: 'root'
