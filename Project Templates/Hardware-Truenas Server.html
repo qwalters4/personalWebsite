@@ -1,0 +1,32 @@
+<h2>Truenas Scale Home Server</h2>
+<p>
+    Setting up a Truenas Scale server has been one of the best learning opportunities I've had. The server was built and setup originally 
+    as a netowrk drive to store pictures and files that I wanted to offload my personal machine. It has since snowballed and become a sandbox 
+    where I get to learn and try new things.
+</p>
+<h3>Hardware</h3>
+<p>
+    When I decided I wanted to explore the idea of a home server, the only experience I had was building and running a truenas for a previous employer 
+    for their own storage needs. I had planned to look at used servers with enterprise hardware but soon discovered how expensive it was for 
+    how little performance I would be recieving. Instead I went the route of used enthusiast hardware like Intels High-End Desktop, or HEDT, platform.
+    A Skylake or newer architecture was prefered since that was the last big improvement Intel had made at that point, and I wanted 10G networking as 
+    well. This landed me on the Skylake-X architecture and a X299 motherboard. Very few X299 boards were made and fewer had 10G. Luckily someone local 
+    was selling a bundled i9 7900X and an ASRock X299 board with 10G onboard for cheaper than any other combos I had seen till then. Storage was cheap 
+    and accessible from my previous employer, a hard drive reseller, and the drives were personally tested by me. I ended up with 10 data drives and 2 
+    cache drives. The data drives were 4TB HGST SAS drives from an Oracle datacenter and the 2 cache drives were 512GB Samsung Gen 4 NVME SSDs. The data 
+    drive were then connected to a 4 port LSI SAS controller. 
+</p>
+<h3>Setup</h3>
+<p>
+    In order to provide some redundancy and the best performance I chose 3 vdevs each in RAIDZ1 along with 1 hot spre that could be swapped out automatically 
+    if any issues were detected. To provide high read speeds for more demanding tasks the 2 NVME drive were setup in RAID0 as an Level 2 ARC cache. For 
+    Networking I have server connected to the network via a 1G connection and my personal machine is connected directly through the 10G connection. These 
+    choices allow me to often saturate the servers 10G networking connection during transfers and provide fast enough random read and write response that 
+    I can play demanding games directly off of my SMB share.
+</p>
+<h3>Uses</h3>
+<p>
+    As I mentioned previously the main purpose was originally to be a simple large network drive for storage and maybe plex if i was feeling adventurous. 
+    This is now one of the best tools at my disposal for learning new technologies and skills. Currently the machine is also hosting 3 docker images, a 
+    postgresql database, a .NET web API, and this website which uses the web api and database.
+</p>
